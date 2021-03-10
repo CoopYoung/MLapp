@@ -1,0 +1,47 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: YoungMLProject
+  description: ''
+paths:
+  /predict/{data}:
+    get:
+      tags:
+        - PREDICT
+        operationId: Project1.ipynb.my_prediction
+	description: Returns prediction of heart disease
+        parameters:
+	 -in: path
+          name: data
+          required: true
+	  schema:
+	    type: array
+	    items:
+              type: number
+            minItems: 12
+         responses:
+	   '200':
+              description: 'Prediction pass'
+	      content:
+                application/json:
+  /train/<test_size>:
+    get:
+      tags:
+        -TRAIN
+        operationId: Project1.ipynb.train_my_log_regression
+        description: Set how big test size should be
+        parameters:
+          -in: path
+           name: test_size
+           required: true
+	   schema:
+             type: number
+	     minItems: 1
+        responses:
+          '200':
+             description: "Correct"          
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /CoopYoung/YoungE222/1.0
+schemes:
+ - https
