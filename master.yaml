@@ -14,7 +14,7 @@ paths:
   /predict/{data}:
     get:
       tags:
-        - PREDICT
+        - PRED
       operationId: functions.my_prediction
       description: Returns cpu information of the hosting server
       parameters:
