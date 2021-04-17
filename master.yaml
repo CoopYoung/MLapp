@@ -35,5 +35,30 @@ paths:
       responses:
         '200':
           description: 'CPU info, or add more text'
+  /file/<filename>:
+    post:
+      tags:
+        - Upload
+      summary: Upload a file 
+      operationId: file.upload
+      parameters:
+        - name: filename
+          in: query
+          description: filename to be uploaded 
+          required: true
+          schema:
+            type: string 
+      responses:
+        '405':
+          description: Invalid input
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
 servers:
   - url: 'http://localhost:8080/engr-222'

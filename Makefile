@@ -14,7 +14,7 @@ docker-build:
 docker-start:
 	@echo "starting the NEW service in container..."
 	docker run  -p 8080:8080 predict_demo
-	
+
 docker-inter:
 	@echo "starting the NEW service in container interactively..."
 	docker run  -p 8080:8080 -it predict_demo
@@ -39,6 +39,7 @@ docker-remove:
 	@echo "removing the image..."
 	docker rmi -f predict_demo
 	@echo "image removed"
+
 
 docker-clean: docker-stop docker-remove
 	@echo "DONE"
